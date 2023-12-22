@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link 
+    rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container m-5 rounded mx-auto bg-light shadow">
+      <!-- App title section -->
+      <div class="row p-4">
+        <div class="col">
+          <h1 class="text-center">
+            <u>My Todo List ✅</u>
+          </h1>
+        </div>
+      </div>
+      <!-- Create todo section -->
+      <div class="row p-3">
+        <div class="col col-11 mx-auto">
+          <div class="row bg-white rounded shadow-sm p-2">
+            <div class="col">
+              <input
+                id="task-title"
+                class="form-control border-0 rounded"
+                type="text"
+                placeholder="Enter the task here.."
+              />
+            </div>
+            <div class="col-auto">
+              <button type="button" class="btn btn-primary" onClick="addTask()">Add Task</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="my-2 mx-4 border-bottom"></div>
+      <!-- Filter options section -->
+      <div class="row p-3 justify-content-end">
+        <div class="col-auto d-flex align-items-center">
+          <label class="text-secondary my-2 me-2">Filter</label>
+          <select class="form-select form-select-sm" onChange="filterTasks(event)">
+            <option value="all" selected>All</option>
+            <option value="completed">Completed</option>
+            <option value="active">Active</option>
+          </select>
+        </div>
+      </div>
+      <!-- Tasks list section START -->
+      <div class="row px-5">
+        <div class="col">
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+              <tbody id="tbody-tasks">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- Tasks list section END -->
+    </div>
+  </body>
+</html>
